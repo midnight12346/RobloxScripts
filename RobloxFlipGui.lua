@@ -193,6 +193,7 @@ sell.Text = "Auto Sell"
 sell.TextColor3 = Color3.fromRGB(0, 0, 0)
 sell.TextSize = 14.000
 sell.MouseButton1Down:connect(function()
+     getgenv().autosell = true
 end)
 
 clicker.Name = "clicker"
@@ -205,4 +206,5 @@ clicker.Text = "Auto Clicker"
 clicker.TextColor3 = Color3.fromRGB(0, 0, 0)
 clicker.TextSize = 14.000
 clicker.MouseButton1Down:connect(function()
+     getgenv().automoneyclick = v
 end)
