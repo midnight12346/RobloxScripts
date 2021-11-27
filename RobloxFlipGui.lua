@@ -1,10 +1,9 @@
--- Gui to Lua
--- Version: 3.2
+-- Made by BoxOfBirds & Pew
 
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
-local ScrollingFrame = Instance.new("ScrollingFrame")
+local main = Instance.new("ScrollingFrame")
 local coinflip = Instance.new("TextButton")
 local crash = Instance.new("TextButton")
 local roulete = Instance.new("TextButton")
@@ -20,22 +19,26 @@ local uncommon = Instance.new("TextButton")
 local TextLabel_4 = Instance.new("TextLabel")
 local sell = Instance.new("TextButton")
 local clicker = Instance.new("TextButton")
+local openmain = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
 
 --Properties:
 
-ScreenGui.Parent = game.CoreGui
+ScreenGui.Parent = game.Workspace
 
-ScrollingFrame.Parent = ScreenGui
-ScrollingFrame.Active = true
-ScrollingFrame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-ScrollingFrame.Position = UDim2.new(0.306227118, 0, 0.259897023, 0)
-ScrollingFrame.Size = UDim2.new(0, 400, 0, 200)
-ScrollingFrame.Visible = false
-ScrollingFrame.Active = true
-ScrollingFrame.draggable = true
+main.Name = "main"
+main.Parent = ScreenGui
+main.Active = true
+main.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+main.Position = UDim2.new(0.306227118, 0, 0.259897023, 0)
+main.Size = UDim2.new(0, 400, 0, 200)
+main.Visible = false
+main.Visible = false
+main.Active = true
+main.draggable = true
 
 coinflip.Name = "coin flip"
-coinflip.Parent = ScrollingFrame
+coinflip.Parent = main
 coinflip.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 coinflip.Position = UDim2.new(0.337500036, 0, 0.0474658199, 0)
 coinflip.Size = UDim2.new(0, 116, 0, 31)
@@ -47,7 +50,7 @@ coinflip.MouseButton1Down:connect(function()
 end)
 
 crash.Name = "crash"
-crash.Parent = ScrollingFrame
+crash.Parent = main
 crash.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 crash.Position = UDim2.new(0.650000036, 0, 0.0474658199, 0)
 crash.Size = UDim2.new(0, 116, 0, 31)
@@ -59,7 +62,7 @@ crash.MouseButton1Down:connect(function()
 end)
 
 roulete.Name = "roulete"
-roulete.Parent = ScrollingFrame
+roulete.Parent = main
 roulete.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 roulete.Position = UDim2.new(0.0250000022, 0, 0.0474658124, 0)
 roulete.Size = UDim2.new(0, 116, 0, 31)
@@ -70,7 +73,7 @@ roulete.TextSize = 14.000
 roulete.MouseButton1Down:connect(function()
 end)
 
-TextLabel.Parent = ScrollingFrame
+TextLabel.Parent = main
 TextLabel.BackgroundColor3 = Color3.fromRGB(94, 96, 96)
 TextLabel.Size = UDim2.new(0, 387, 0, 25)
 TextLabel.Font = Enum.Font.Ubuntu
@@ -78,7 +81,7 @@ TextLabel.Text = "Roblox Flip GUI"
 TextLabel.TextColor3 = Color3.fromRGB(246, 246, 246)
 TextLabel.TextSize = 14.000
 
-TextLabel_2.Parent = ScrollingFrame
+TextLabel_2.Parent = main
 TextLabel_2.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
 TextLabel_2.BackgroundTransparency = 1.000
 TextLabel_2.Position = UDim2.new(0.0274999999, 0, 0.0202343743, 0)
@@ -89,7 +92,7 @@ TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel_2.TextSize = 20.000
 TextLabel_2.TextWrapped = true
 
-TextLabel_3.Parent = ScrollingFrame
+TextLabel_3.Parent = main
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
 TextLabel_3.BackgroundTransparency = 1.000
 TextLabel_3.Position = UDim2.new(0.0274999999, 0, 0.0729687512, 0)
@@ -101,7 +104,7 @@ TextLabel_3.TextSize = 20.000
 TextLabel_3.TextWrapped = true
 
 Stop.Name = "Stop"
-Stop.Parent = ScrollingFrame
+Stop.Parent = main
 Stop.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 Stop.Position = UDim2.new(0.650000036, 0, 0.125590816, 0)
 Stop.Size = UDim2.new(0, 116, 0, 31)
@@ -113,7 +116,7 @@ Stop.MouseButton1Down:connect(function()
 end)
 
 rare.Name = "rare"
-rare.Parent = ScrollingFrame
+rare.Parent = main
 rare.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 rare.Position = UDim2.new(0.649999976, 0, 0.0951741561, 0)
 rare.Size = UDim2.new(0, 116, 0, 31)
@@ -125,7 +128,7 @@ rare.MouseButton1Down:connect(function()
 end)
 
 exotic.Name = "exotic"
-exotic.Parent = ScrollingFrame
+exotic.Parent = main
 exotic.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 exotic.Position = UDim2.new(0.340000033, 0, 0.125773117, 0)
 exotic.Size = UDim2.new(0, 116, 0, 31)
@@ -137,7 +140,7 @@ exotic.MouseButton1Down:connect(function()
 end)
 
 legen.Name = "legen"
-legen.Parent = ScrollingFrame
+legen.Parent = main
 legen.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 legen.Position = UDim2.new(0.0275000352, 0, 0.125773117, 0)
 legen.Size = UDim2.new(0, 116, 0, 31)
@@ -149,7 +152,7 @@ legen.MouseButton1Down:connect(function()
 end)
 
 common.Name = "common"
-common.Parent = ScrollingFrame
+common.Parent = main
 common.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 common.Position = UDim2.new(0.0250000022, 0, 0.0956428871, 0)
 common.Size = UDim2.new(0, 116, 0, 31)
@@ -161,7 +164,7 @@ common.MouseButton1Down:connect(function()
 end)
 
 uncommon.Name = "uncommon"
-uncommon.Parent = ScrollingFrame
+uncommon.Parent = main
 uncommon.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 uncommon.Position = UDim2.new(0.337500036, 0, 0.0949918628, 0)
 uncommon.Size = UDim2.new(0, 116, 0, 31)
@@ -172,7 +175,7 @@ uncommon.TextSize = 14.000
 uncommon.MouseButton1Down:connect(function()
 end)
 
-TextLabel_4.Parent = ScrollingFrame
+TextLabel_4.Parent = main
 TextLabel_4.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
 TextLabel_4.BackgroundTransparency = 1.000
 TextLabel_4.Position = UDim2.new(0.0274999999, 0, 0.151093751, 0)
@@ -184,7 +187,7 @@ TextLabel_4.TextSize = 20.000
 TextLabel_4.TextWrapped = true
 
 sell.Name = "sell"
-sell.Parent = ScrollingFrame
+sell.Parent = main
 sell.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 sell.Position = UDim2.new(0.0250000358, 0, 0.176554367, 0)
 sell.Size = UDim2.new(0, 116, 0, 31)
@@ -193,11 +196,11 @@ sell.Text = "Auto Sell"
 sell.TextColor3 = Color3.fromRGB(0, 0, 0)
 sell.TextSize = 14.000
 sell.MouseButton1Down:connect(function()
-     getgenv().autosell = true
+	getgenv().autosell = true
 end)
 
 clicker.Name = "clicker"
-clicker.Parent = ScrollingFrame
+clicker.Parent = main
 clicker.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
 clicker.Position = UDim2.new(0.337500036, 0, 0.176554367, 0)
 clicker.Size = UDim2.new(0, 116, 0, 31)
@@ -206,5 +209,25 @@ clicker.Text = "Auto Clicker"
 clicker.TextColor3 = Color3.fromRGB(0, 0, 0)
 clicker.TextSize = 14.000
 clicker.MouseButton1Down:connect(function()
-     getgenv().automoneyclick = v
+	getgenv().automoneyclick = v
 end)
+
+openmain.Name = "openmain"
+openmain.Parent = ScreenGui
+openmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+openmain.BackgroundTransparency = 1.000
+openmain.Position = UDim2.new(0, 0, 0.354828686, 0)
+openmain.Size = UDim2.new(0, 93, 0, 26)
+openmain.MouseButton1Down:connect(function()
+	openmain.Visible = false
+	main.Visible = true
+end)
+
+TextButton.Parent = openmain
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.Size = UDim2.new(0, 93, 0, 26)
+TextButton.Font = Enum.Font.Ubuntu
+TextButton.Text = "open script"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextSize = 14.000
