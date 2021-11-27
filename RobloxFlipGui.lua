@@ -10,29 +10,34 @@ local coinflip = Instance.new("TextButton")
 local crash = Instance.new("TextButton")
 local roulete = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
+local gamewinners = Instance.new("TextLabel")
+local cratebuy = Instance.new("TextLabel")
 local Stop = Instance.new("TextButton")
 local rare = Instance.new("TextButton")
 local exotic = Instance.new("TextButton")
 local legen = Instance.new("TextButton")
 local common = Instance.new("TextButton")
 local uncommon = Instance.new("TextButton")
-local TextLabel_4 = Instance.new("TextLabel")
+local General = Instance.new("TextLabel")
 local sell = Instance.new("TextButton")
 local clicker = Instance.new("TextButton")
 local openmain = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
 local plr = game.Players.LocalPlayer
-local TextButton_5 = Instance.new("TextButton")
+local mainX = Instance.new("TextButton")
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 local clickercount = 1
-local TextLabel_5 = Instance.new("TextLabel")
-local TextLabel_6 = Instance.new("TextLabel")
+local Credits = Instance.new("TextLabel")
+local discord = Instance.new("TextLabel")
 local UserInputService = game:GetService("UserInputService")
+local small = Instance.new("Frame")
+local mainSmall = Instance.new("TextButton")
+local smallX = Instance.new("TextButton")
+local smallbig = Instance.new("TextButton")
+local Robloxguismall = Instance.new("TextLabel")
 
---Properties:
+--Properties Main:
 
 ScreenGui.Parent = game.CoreGui
 
@@ -90,27 +95,27 @@ TextLabel.Text = "Roblox Flip GUI"
 TextLabel.TextColor3 = Color3.fromRGB(246, 246, 246)
 TextLabel.TextSize = 14.000
 
-TextLabel_2.Parent = main
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.Position = UDim2.new(0.0274999999, 0, 0.0202343743, 0)
-TextLabel_2.Size = UDim2.new(0, 365, 0, 33)
-TextLabel_2.Font = Enum.Font.Ubuntu
-TextLabel_2.Text = "Game Winners"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextSize = 20.000
-TextLabel_2.TextWrapped = true
+gamewinners.Parent = main
+gamewinners.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+gamewinners.BackgroundTransparency = 1.000
+gamewinners.Position = UDim2.new(0.0274999999, 0, 0.0202343743, 0)
+gamewinners.Size = UDim2.new(0, 365, 0, 33)
+gamewinners.Font = Enum.Font.Ubuntu
+gamewinners.Text = "Game Winners"
+gamewinners.TextColor3 = Color3.fromRGB(255, 255, 255)
+gamewinners.TextSize = 20.000
+gamewinners.TextWrapped = true
 
-TextLabel_3.Parent = main
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.Position = UDim2.new(0.0274999999, 0, 0.0729687512, 0)
-TextLabel_3.Size = UDim2.new(0, 365, 0, 33)
-TextLabel_3.Font = Enum.Font.Ubuntu
-TextLabel_3.Text = "Crate Buy"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextSize = 20.000
-TextLabel_3.TextWrapped = true
+cratebuy.Parent = main
+cratebuy.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+cratebuy.BackgroundTransparency = 1.000
+cratebuy.Position = UDim2.new(0.0274999999, 0, 0.0729687512, 0)
+cratebuy.Size = UDim2.new(0, 365, 0, 33)
+cratebuy.Font = Enum.Font.Ubuntu
+cratebuy.Text = "Crate Buy"
+cratebuy.TextColor3 = Color3.fromRGB(255, 255, 255)
+cratebuy.TextSize = 20.000
+cratebuy.TextWrapped = true
 
 Stop.Name = "Stop"
 Stop.Parent = main
@@ -184,16 +189,16 @@ uncommon.TextSize = 14.000
 uncommon.MouseButton1Click:connect(function()
 end)
 
-TextLabel_4.Parent = main
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.Position = UDim2.new(0.0274999999, 0, 0.151093751, 0)
-TextLabel_4.Size = UDim2.new(0, 365, 0, 33)
-TextLabel_4.Font = Enum.Font.Ubuntu
-TextLabel_4.Text = "General"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextSize = 20.000
-TextLabel_4.TextWrapped = true
+General.Parent = main
+General.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+General.BackgroundTransparency = 1.000
+General.Position = UDim2.new(0.0274999999, 0, 0.151093751, 0)
+General.Size = UDim2.new(0, 365, 0, 33)
+General.Font = Enum.Font.Ubuntu
+General.Text = "General"
+General.TextColor3 = Color3.fromRGB(255, 255, 255)
+General.TextSize = 20.000
+General.TextWrapped = true
 
 sell.Name = "sell"
 sell.Parent = main
@@ -225,53 +230,127 @@ clicker.MouseButton1Click:connect(function()
      end
 end)
 
-TextButton_5.Parent = main
-TextButton_5.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
-TextButton_5.BackgroundTransparency = 1.000
-TextButton_5.Position = UDim2.new(-0.110000000, 0, 0.0, -2.5)
-TextButton_5.Size = UDim2.new(0, 116, 0, 31)
-TextButton_5.Font = Enum.Font.Ubuntu
-TextButton_5.Text = "X"
-TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_5.TextSize = 14.000
-TextButton_5.MouseButton1Click:connect(function()
+mainX.Parent = main
+mainX.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
+mainX.BackgroundTransparency = 1.000
+mainX.Position = UDim2.new(-0.110000000, 0, 0.0, -2.5)
+mainX.Size = UDim2.new(0, 116, 0, 31)
+mainX.Font = Enum.Font.Ubuntu
+mainX.Text = "X"
+mainX.TextColor3 = Color3.fromRGB(255, 255, 255)
+mainX.TextSize = 14.000
+mainX.MouseButton1Click:connect(function()
      main.Visible = false
 end)
 
-TextButton_5.Parent = main
-TextButton_5.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
-TextButton_5.BackgroundTransparency = 1.000
-TextButton_5.Position = UDim2.new(-0.110000000, 0, 0.0, -2.5)
-TextButton_5.Size = UDim2.new(0, 116, 0, 31)
-TextButton_5.Font = Enum.Font.Ubuntu
-TextButton_5.Text = "X"
-TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_5.TextSize = 14.000
-TextButton_5.MouseButton1Click:connect(function()
+Credits.Parent = main
+Credits.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+Credits.BackgroundTransparency = 1.000
+Credits.Position = UDim2.new(0.0274999999, 0, 0.203177094, 0)
+Credits.Size = UDim2.new(0, 365, 0, 33)
+Credits.Font = Enum.Font.Ubuntu
+Credits.Text = "Credits"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextSize = 20.000
+Credits.TextWrapped = true
+
+discord.Parent = main
+discord.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+discord.BackgroundTransparency = 1.000
+discord.Position = UDim2.new(0.0250000004, 0, 0.228567719, 0)
+discord.Size = UDim2.new(0, 365, 0, 33)
+discord.Font = Enum.Font.SciFi
+discord.Text = "By BoxOfBirds#9924 & Pew#3918"
+discord.TextColor3 = Color3.fromRGB(255, 255, 255)
+discord.TextSize = 20.000
+discord.TextWrapped = true
+
+mainSmall.Parent = main
+mainSmall.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mainSmall.BackgroundTransparency = 1.000
+mainSmall.Position = UDim2.new(0.0449999976, 0, 0.00311073288, 0)
+mainSmall.Size = UDim2.new(0, 30, 0, 14)
+mainSmall.Font = Enum.Font.Ubuntu
+mainSmall.Text = "--"
+mainSmall.TextColor3 = Color3.fromRGB(255, 255, 255)
+mainSmall.TextSize = 14.000
+mainSmall.MouseButton1Click:connect(function()
      main.Visible = false
+     small.Visible = true
+     smallX.Visible = true
+     smallbig.Visible = true
 end)
 
-TextLabel_5.Parent = ScrollingFrame
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.Position = UDim2.new(0.0274999999, 0, 0.203177094, 0)
-TextLabel_5.Size = UDim2.new(0, 365, 0, 33)
-TextLabel_5.Font = Enum.Font.Ubuntu
-TextLabel_5.Text = "Credits"
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextSize = 20.000
-TextLabel_5.TextWrapped = true
+--Properties Small:
 
-TextLabel_6.Parent = ScrollingFrame
-TextLabel_6.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
-TextLabel_6.BackgroundTransparency = 1.000
-TextLabel_6.Position = UDim2.new(0.0250000004, 0, 0.228567719, 0)
-TextLabel_6.Size = UDim2.new(0, 365, 0, 33)
-TextLabel_6.Font = Enum.Font.SciFi
-TextLabel_6.Text = "By BoxOfBirds#9924 & Pew#3918"
-TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.TextSize = 20.000
-TextLabel_6.TextWrapped = true
+small.Name = "small"
+small.Parent = ScreenGui
+small.BackgroundColor3 = Color3.fromRGB(80, 81, 81)
+small.Position = UDim2.new(0.306227118, 0, 0.259114593, 0)
+small.Size = UDim2.new(0, 400, 0, 25)
+small.Visible = false
+
+smallbig.Parent = small
+smallbig.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+smallbig.BackgroundTransparency = 1.000
+smallbig.Position = UDim2.new(0.0649999976, 0, 0.20311074, 0)
+smallbig.Size = UDim2.new(0, 30, 0, 14)
+smallbig.Font = Enum.Font.Ubuntu
+smallbig.Text = "[]"
+smallbig.TextColor3 = Color3.fromRGB(0, 0, 0)
+smallbig.TextSize = 14.000
+smallbig.Visible = false
+smallbig.MouseButton1Click:connect(function()
+     main.Visible = true
+     coinflip.Visible = true 
+     crash.Visible = true 
+     roulete.Visible = true  
+     TextLabel.Visible = true  
+     gamewinners.Visible = true  
+     cratebuy.Visible = true  
+     top.Visible = true  
+     rare.Visible = true 
+     exotic.Visible = true  
+     legen.Visible = true  
+     common.Visible = true  
+     uncommon.Visible = true  
+     General.Visible = true  
+     sell.Visible = true 
+     clicker.Visible = true  
+     TextButton.Visible = true  
+     mainX.Visible = true  
+     Credits.Visible = true  
+     discord.Visible = true 
+     small.Visible = false
+     smallX.Visible = false
+     smallbig.Visible = false
+end)
+
+smallX.Parent = small
+smallX.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
+smallX.BackgroundTransparency = 1.000
+smallX.Position = UDim2.new(-0.110000000, 0, 0.0, -2.5)
+smallX.Size = UDim2.new(0, 116, 0, 31)
+smallX.Font = Enum.Font.Ubuntu
+smallX.Text = "X"
+smallX.TextColor3 = Color3.fromRGB(255, 255, 255)
+smallX.TextSize = 14.000
+smallX.Visible = false
+smallX.MouseButton1Click:connect(function()
+     main.Visible = false
+     small.Visible = false
+     smallbig.Visible = false
+     smallX.Visible = false
+end)
+
+Robloxguismall.Parent = small
+Robloxguismall.BackgroundColor3 = Color3.fromRGB(94, 96, 96)
+Robloxguismall.BackgroundTransparency = 1.000
+Robloxguismall.Size = UDim2.new(0, 387, 0, 25)
+Robloxguismall.Font = Enum.Font.Ubuntu
+Robloxguismall.Text = "Roblox Flip GUI"
+Robloxguismall.TextColor3 = Color3.fromRGB(246, 246, 246)
+Robloxguismall.TextSize = 14.000
 
 --Visability
 
@@ -280,6 +359,43 @@ mouse.KeyDown:connect(function(m)
 end)
 
 local gui = main
+
+        local dragging
+        local dragInput
+        local dragStart
+        local startPos
+
+        local function update(input)
+        	local delta = input.Position - dragStart
+        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+
+        gui.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = gui.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        gui.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input)
+        	end
+        end)
+local gui = small
 
         local dragging
         local dragInput
