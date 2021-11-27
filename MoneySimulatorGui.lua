@@ -1,35 +1,69 @@
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
     local Window = Library.CreateLib("Money Sim Gui", "DarkTheme")
+    local clicks = 0
+    local A = 0
+    local B = 0
+    local C = 0
+    local D = 0
+    local E = 0
+    local F = 0
 
     --Upgrades
     local games = Window:NewTab("Upgrades")
     local GameSection = games:NewSection("Auto Upgrades")
     GameSection:NewToggle("Auto Upgrade Power", "When on Will Auto Upgrade The Power", function(state)
         if state then
-            print("Toggle On")
+          A = 1
+            while A == 1 do
+                game:GetService("ReplicatedStorage").UpgradePower:FireServer()
+                wait(0.05)
+            end    
         else
-            print("Toggle Off")
+            A = 0
         end
     end)
     GameSection:NewToggle("Auto Upgrade Bag", "When on Will Auto Upgrade The Bag", function(state)
         if state then
-            print("Toggle On")
+         B = 1
+            while B == 1 do
+               game:GetService("ReplicatedStorage").UpgradeBag:FireServer()
+                wait(0.05)
+            end    
         else
-            print("Toggle Off")
+            B = 0
         end
     end)
     GameSection:NewToggle("Auto Tier up", "When on Will Auto Tier up", function(state)
         if state then
-            print("Toggle On")
+           C = 1
+            while C == 1 do
+               game:GetService("ReplicatedStorage").TierUp:FireServer()
+                wait(0.05)
+            end    
         else
-            print("Toggle Off")
+            C = 0
         end
     end)
     GameSection:NewToggle("Auto Rank up", "When on Will Auto Rank Up", function(state)
         if state then
-            print("Toggle On")
+            E = 1
+            while E == 1 do
+               game:GetService("ReplicatedStorage").UpgradeRank:FireServer()
+                wait(0.05)
+            end    
         else
-            print("Toggle Off")
+            E = 0
+        end
+    end)
+        GameSection:NewToggle("Auto Buy Runes", "When on Will Auto Buy Runes", function(state)
+        if state then
+            D = 1
+            while D == 1 do
+               game:GetService("ReplicatedStorage").BuyRune:FireServer(1)
+                wait(0.05)
+            end    
+        else
+            D = 0
         end
     end)
    
@@ -38,16 +72,22 @@
     local Auto = general:NewSection("Auto")
     Auto:NewToggle("Auto Clicker", "When on Will automaticly press the cash button", function(state)
         if state then
-            
+            clicks = 1
+            while click == 1 do
+                
+                wait(0.05)
+            end    
         else
-            
+            clicks = 0
         end
     end)
     Auto:NewToggle("Auto Refill", "When on will automaticly refill bag", function(state)
         if state then
-            print("Toggle On")
+            if Player.PlayerGui.GameGui.Fill.Filled.Text == "0%" then
+                game:GetService("ReplicatedStorage").FillMoney:FireServer() 
+            end
         else
-            print("Toggle Off")
+            D = 0
         end
     end)
 
