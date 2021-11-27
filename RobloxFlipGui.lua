@@ -1,5 +1,7 @@
 -- Made by BoxOfBirds & Pew
 
+print ("Starting Up")
+
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -21,10 +23,14 @@ local sell = Instance.new("TextButton")
 local clicker = Instance.new("TextButton")
 local openmain = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
+local plr = game.Players.LocalPlayer
+local TextButton_5 = Instance.new("TextButton")
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
 
 --Properties:
 
-ScreenGui.Parent = game.Workspace
+ScreenGui.Parent = game.CoreGui
 
 main.Name = "main"
 main.Parent = ScreenGui
@@ -211,3 +217,22 @@ clicker.MouseButton1Click:connect(function()
 	getgenv().automoneyclick = v
 end)
 
+TextButton_5.Parent = main
+TextButton_5.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
+TextButton_5.BackgroundTransparency = 1.000
+TextButton_5.Position = UDim2.new(-0.110000000, 0, 0.0, -2.5)
+TextButton_5.Size = UDim2.new(0, 116, 0, 31)
+TextButton_5.Font = Enum.Font.Ubuntu
+TextButton_5.Text = "X"
+TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.TextSize = 14.000
+TextButton_5.MouseButton1Click:connect(function()
+     main.Visible = false
+end)
+
+mouse.KeyDown:connect(function(g)
+    main.Visible = true
+end)
+
+
+print ("Finished")
