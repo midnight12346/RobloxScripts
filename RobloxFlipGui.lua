@@ -27,6 +27,9 @@ local plr = game.Players.LocalPlayer
 local TextButton_5 = Instance.new("TextButton")
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
+local clickercount = 1
+local TextLabel_5 = Instance.new("TextLabel")
+local TextLabel_6 = Instance.new("TextLabel")
 
 --Properties:
 
@@ -214,7 +217,11 @@ clicker.Text = "Auto Clicker"
 clicker.TextColor3 = Color3.fromRGB(0, 0, 0)
 clicker.TextSize = 14.000
 clicker.MouseButton1Click:connect(function()
-	getgenv().automoneyclick = v
+     clickercount = 0
+     while clickercount == 0 do
+          game:GetService("ReplicatedStorage").Events.clicked:FireServer()
+          wait(0.2 )
+     end
 end)
 
 TextButton_5.Parent = main
@@ -230,13 +237,32 @@ TextButton_5.MouseButton1Click:connect(function()
      main.Visible = false
 end)
 
+TextLabel_5.Parent = ScrollingFrame
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.0274999999, 0, 0.203177094, 0)
+TextLabel_5.Size = UDim2.new(0, 365, 0, 33)
+TextLabel_5.Font = Enum.Font.Ubuntu
+TextLabel_5.Text = "Credits"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 20.000
+TextLabel_5.TextWrapped = true
+
+TextLabel_6.Parent = ScrollingFrame
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.Position = UDim2.new(0.0250000004, 0, 0.228567719, 0)
+TextLabel_6.Size = UDim2.new(0, 365, 0, 33)
+TextLabel_6.Font = Enum.Font.SciFi
+TextLabel_6.Text = "By BoxOfBirds#9924 & Pew#3918"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextSize = 20.000
+TextLabel_6.TextWrapped = true
+
+--Visability
+
 mouse.KeyDown:connect(function(m)
-     if main.Visible == false then
-          main.Visible = true
-     end
-     if main.Visible == true then
-          main.Visible = false
-     end
+     main.Visible = true
 end)
 
 print ("Finished")
