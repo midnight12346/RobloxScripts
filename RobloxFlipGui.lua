@@ -230,7 +230,7 @@ TextButton_5.MouseButton1Click:connect(function()
      main.Visible = false
 end)
 
-mouse.KeyDown:connect(function(g)
+mouse.KeyDown:connect(function("]")
     main.Visible = true
 end)
 
