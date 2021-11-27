@@ -30,6 +30,7 @@ local mouse = player:GetMouse()
 local clickercount = 1
 local TextLabel_5 = Instance.new("TextLabel")
 local TextLabel_6 = Instance.new("TextLabel")
+local UserInputService = game:GetService("UserInputService")
 
 --Properties:
 
@@ -237,6 +238,19 @@ TextButton_5.MouseButton1Click:connect(function()
      main.Visible = false
 end)
 
+TextButton_5.Parent = main
+TextButton_5.BackgroundColor3 = Color3.fromRGB(146, 148, 148)
+TextButton_5.BackgroundTransparency = 1.000
+TextButton_5.Position = UDim2.new(-0.110000000, 0, 0.0, -2.5)
+TextButton_5.Size = UDim2.new(0, 116, 0, 31)
+TextButton_5.Font = Enum.Font.Ubuntu
+TextButton_5.Text = "X"
+TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_5.TextSize = 14.000
+TextButton_5.MouseButton1Click:connect(function()
+     main.Visible = false
+end)
+
 TextLabel_5.Parent = ScrollingFrame
 TextLabel_5.BackgroundColor3 = Color3.fromRGB(140, 142, 142)
 TextLabel_5.BackgroundTransparency = 1.000
@@ -264,5 +278,43 @@ TextLabel_6.TextWrapped = true
 mouse.KeyDown:connect(function(m)
      main.Visible = true
 end)
+
+local gui = main
+
+        local dragging
+        local dragInput
+        local dragStart
+        local startPos
+
+        local function update(input)
+        	local delta = input.Position - dragStart
+        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+
+        gui.InputBegan:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		dragging = true
+        		dragStart = input.Position
+        		startPos = gui.Position
+        		
+        		input.Changed:Connect(function()
+        			if input.UserInputState == Enum.UserInputState.End then
+        				dragging = false
+        			end
+        		end)
+        	end
+        end)
+
+        gui.InputChanged:Connect(function(input)
+        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        		dragInput = input
+        	end
+        end)
+
+        UserInputService.InputChanged:Connect(function(input)
+        	if input == dragInput and dragging then
+        		update(input)
+        	end
+        end)
 
 print ("Finished")
