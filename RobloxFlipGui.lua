@@ -32,10 +32,8 @@ main.Active = true
 main.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 main.Position = UDim2.new(0.306227118, 0, 0.259897023, 0)
 main.Size = UDim2.new(0, 400, 0, 200)
-main.Visible = false
-main.Visible = false
+main.Visible = true
 main.Active = true
-main.draggable = true
 
 coinflip.Name = "coin flip"
 coinflip.Parent = main
@@ -46,7 +44,8 @@ coinflip.Font = Enum.Font.Ubuntu
 coinflip.Text = "Coin Flip Winner"
 coinflip.TextColor3 = Color3.fromRGB(0, 0, 0)
 coinflip.TextSize = 14.000
-coinflip.MouseButton1Down:connect(function()
+coinflip.MouseButton1Click:connect(function()
+ 
 end)
 
 crash.Name = "crash"
@@ -58,7 +57,7 @@ crash.Font = Enum.Font.Ubuntu
 crash.Text = "Crash Winner"
 crash.TextColor3 = Color3.fromRGB(0, 0, 0)
 crash.TextSize = 14.000
-crash.MouseButton1Down:connect(function()
+crash.MouseButton1Click:connect(function()
 end)
 
 roulete.Name = "roulete"
@@ -70,7 +69,7 @@ roulete.Font = Enum.Font.Ubuntu
 roulete.Text = "Roulete Winner"
 roulete.TextColor3 = Color3.fromRGB(0, 0, 0)
 roulete.TextSize = 14.000
-roulete.MouseButton1Down:connect(function()
+roulete.MouseButton1Click:connect(function()
 end)
 
 TextLabel.Parent = main
@@ -112,7 +111,7 @@ Stop.Font = Enum.Font.Ubuntu
 Stop.Text = "Stop"
 Stop.TextColor3 = Color3.fromRGB(0, 0, 0)
 Stop.TextSize = 14.000
-Stop.MouseButton1Down:connect(function()
+Stop.MouseButton1Click:connect(function()
 end)
 
 rare.Name = "rare"
@@ -124,7 +123,7 @@ rare.Font = Enum.Font.Ubuntu
 rare.Text = "Buy Rare"
 rare.TextColor3 = Color3.fromRGB(0, 0, 0)
 rare.TextSize = 14.000
-rare.MouseButton1Down:connect(function()
+rare.MouseButton1Click:connect(function()
 end)
 
 exotic.Name = "exotic"
@@ -136,7 +135,7 @@ exotic.Font = Enum.Font.Ubuntu
 exotic.Text = "Buy Exotic"
 exotic.TextColor3 = Color3.fromRGB(0, 0, 0)
 exotic.TextSize = 14.000
-exotic.MouseButton1Down:connect(function()
+exotic.MouseButton1Click:connect(function()
 end)
 
 legen.Name = "legen"
@@ -148,7 +147,7 @@ legen.Font = Enum.Font.Ubuntu
 legen.Text = "Buy Legendary"
 legen.TextColor3 = Color3.fromRGB(0, 0, 0)
 legen.TextSize = 14.000
-legen.MouseButton1Down:connect(function()
+legen.MouseButton1Click:connect(function()
 end)
 
 common.Name = "common"
@@ -160,7 +159,7 @@ common.Font = Enum.Font.Ubuntu
 common.Text = "Buy Common"
 common.TextColor3 = Color3.fromRGB(0, 0, 0)
 common.TextSize = 14.000
-common.MouseButton1Down:connect(function()
+common.MouseButton1Click:connect(function()
 end)
 
 uncommon.Name = "uncommon"
@@ -172,7 +171,7 @@ uncommon.Font = Enum.Font.Ubuntu
 uncommon.Text = "Buy uncommon"
 uncommon.TextColor3 = Color3.fromRGB(0, 0, 0)
 uncommon.TextSize = 14.000
-uncommon.MouseButton1Down:connect(function()
+uncommon.MouseButton1Click:connect(function()
 end)
 
 TextLabel_4.Parent = main
@@ -195,7 +194,7 @@ sell.Font = Enum.Font.Ubuntu
 sell.Text = "Auto Sell"
 sell.TextColor3 = Color3.fromRGB(0, 0, 0)
 sell.TextSize = 14.000
-sell.MouseButton1Down:connect(function()
+sell.MouseButton1Click:connect(function()
 	getgenv().autosell = true
 end)
 
@@ -208,26 +207,7 @@ clicker.Font = Enum.Font.Ubuntu
 clicker.Text = "Auto Clicker"
 clicker.TextColor3 = Color3.fromRGB(0, 0, 0)
 clicker.TextSize = 14.000
-clicker.MouseButton1Down:connect(function()
+clicker.MouseButton1Click:connect(function()
 	getgenv().automoneyclick = v
 end)
 
-openmain.Name = "openmain"
-openmain.Parent = ScreenGui
-openmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-openmain.BackgroundTransparency = 1.000
-openmain.Position = UDim2.new(0, 0, 0.354828686, 0)
-openmain.Size = UDim2.new(0, 93, 0, 26)
-openmain.MouseButton1Down:connect(function()
-	openmain.Visible = false
-	main.Visible = true
-end)
-
-TextButton.Parent = openmain
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BackgroundTransparency = 1.000
-TextButton.Size = UDim2.new(0, 93, 0, 26)
-TextButton.Font = Enum.Font.Ubuntu
-TextButton.Text = "open script"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
