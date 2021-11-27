@@ -230,9 +230,13 @@ TextButton_5.MouseButton1Click:connect(function()
      main.Visible = false
 end)
 
-mouse.KeyDown:connect(function("]")
-    main.Visible = true
+mouse.KeyDown:connect(function(m)
+     if main.Visible == false then
+          main.Visible = true
+     end
+     if main.Visible == true then
+          main.Visible = false
+     end
 end)
-
 
 print ("Finished")
