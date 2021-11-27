@@ -1,6 +1,6 @@
 
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("Roblox Flip GUI", "Sentinel")
+    local Window = Library.CreateLib("Roblox Flip GUI", "DarkTheme")
     local clicks = 1
 
     --games
